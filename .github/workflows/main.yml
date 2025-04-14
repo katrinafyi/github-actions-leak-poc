@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  boop:
+    name: leak test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: ./leak.sh
+    - uses: actions/checkout@v4
+    
+    
