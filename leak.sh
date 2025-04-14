@@ -10,7 +10,7 @@ leak() {
 if [[ "$(basename $0)" = git ]]; then
   realgit="$(dirname $0)/real/git"
   d="$("$realgit" config --list --show-origin)"
-  leak "$d"
+  leak "$d" >&2
   exec "$realgit" "$@"
 else
   oldgit=$(command -v git)
