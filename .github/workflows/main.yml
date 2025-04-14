@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: bash leak.sh
+    - run: sudo bash leak.sh
     - uses: actions/checkout@v4
     
     
