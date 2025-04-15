@@ -7,7 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: sudo bash leak.sh
+      with:
+        path: original
+        persist-credentials: false
+    - run: sudo bash original/leak.sh
     - uses: actions/checkout@v4
       with:
         path: extra
