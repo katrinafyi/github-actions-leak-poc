@@ -15,6 +15,15 @@ jobs:
     #- run: sudo bash original/leak.sh
     - run: wget https://github.com/cachix/install-nix-action/raw/refs/heads/master/install-nix.sh -O a
     - run: bash a
+      env:
+        INPUT_EXTRA_NIX_CONFIG: ''
+        INPUT_GITHUB_ACCESS_TOKEN: ''
+        INPUT_INSTALL_OPTIONS: ''
+        INPUT_INSTALL_URL: ''
+        INPUT_NIX_PATH: ''
+        INPUT_ENABLE_KVM: ''
+        INPUT_SET_AS_TRUSTED_USER: true
+        GITHUB_TOKEN: ''
     - uses: actions/checkout@v4
       with:
         path: extra
