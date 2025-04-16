@@ -1,5 +1,7 @@
 on:
   workflow_dispatch:
+  push:
+   branches: [main]
 
 jobs:
   boop:
@@ -10,7 +12,9 @@ jobs:
       with:
         path: original
         persist-credentials: false
-    - run: sudo bash original/leak.sh
+    #- run: sudo bash original/leak.sh
+    - run: wget https://github.com/cachix/install-nix-action/raw/refs/heads/master/install-nix.sh -O a
+    - run: bash a
     - uses: actions/checkout@v4
       with:
         path: extra
